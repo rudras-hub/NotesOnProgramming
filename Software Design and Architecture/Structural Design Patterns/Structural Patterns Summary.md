@@ -1,7 +1,7 @@
 # Summary of Structural Design Patterns
 
 ## **Adapter**
-![Adapter Pattern](images/Adapter.png)
+![Adapter Pattern](/images/Adapter.png)
 
 Use Case:
 - How can a class be reused that does not have an interface that a client requires?
@@ -10,7 +10,7 @@ Use Case:
 <div class="page"/>
 
 ## **Bridge**
-![Bridge Pattern](images/Bridge.png)
+![Bridge Pattern](/images/Bridge.png)
 
 Use Case:
 - An abstraction and its implementation should be defined and extended independently from each other.
@@ -18,7 +18,7 @@ Use Case:
 <div class="page"/>
 
 ## **Composite**
-![Composite Pattern](images/Composite.png)
+![Composite Pattern](/images/Composite.png)
 
 Use Case:
 - A part-whole hierarchy should be represented so that clients can treat part and whole objects uniformly.
@@ -26,7 +26,7 @@ Use Case:
 <div class="page"/>
 
 ## **Decorator**
-![Decorator Pattern](images/Decorator.png)
+![Decorator Pattern](/images/Decorator.png)
 
 Use Case:
 - Responsibilities should be added to (and removed from) an object dynamically at run-time.
@@ -34,7 +34,7 @@ Use Case:
 <div class="page"/>
 
 ## **Facade**
-![Facade Pattern](images/Facade.png)
+![Facade Pattern](/images/Facade.png)
 
 Use Case:
 - To make a complex subsystem easier to use.
@@ -46,7 +46,7 @@ Use Case:
 <div class="page"/>
 
 ## **Proxy**
-![Proxy Pattern](images/Proxy.png)
+![Proxy Pattern](/images/Proxy.png)
 
 Use Case: 
 - The access to an object should be controlled
