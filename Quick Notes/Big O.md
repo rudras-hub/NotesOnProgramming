@@ -1,6 +1,6 @@
 # Big O
 
-![Big O Chart](images/Big_O_Complexity_Chart.PNG)
+![](images/BigO.PNG)
 
 ## Overview
 - Big O mathematically describes the complexity of an algorithm in terms of time and space.
