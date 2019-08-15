@@ -42,12 +42,23 @@
 ### Binary Search Tree
 - For each node in the tree, value of all nodes in the left subtree are less than or equal to itself, and values of all nodes in the right subtree are greater than itself.
 - Average of searching, inserting and removing is O(log(n)).
-- Searching: _Best/Average = O(log(n)). Worst = O(log(n))_
+- Searching: _Best/Average = O(log(n)). Worst = O(n)_
     - For every node is the search value is less than the node go to the left and discard the right subtree, and vice versa for when search value is greater. 
     - Reducing search area by half each time (similar to binary search in sorted array.) => O(log(n))
     - log(n) is the best case, happens when the tree is balanced. 
     - For a very sparse linked list like tree, every time we are reducing the search area by 1 node only = > O(n)
-
+- Recursive Operations:
+    - Implementation
+    - Search
+    - Find min and max values
+    - Find height
+- Traversals:
+    - Breadth first
+    - Depth First
+        - Pre-order (root->left->right)
+        - In-order (left->root->right)
+            - >NOTE: In-order traversal of binary search tree gives sorted list.
+        - Post-order (left->right->root)
 
 
 
