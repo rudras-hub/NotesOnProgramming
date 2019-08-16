@@ -53,12 +53,28 @@
     - Find min and max values
     - Find height
 - Traversals:
-    - Breadth first
+    - Breadth first (Level Order)
+        - Easy implementation with Queues 
+        - Time Complexity -> O(n)
+        - Space Complexity -> O(n) (worst/average) for binary trees. O(1) best case, for stick trees.
+            - Extra memory for Queue needed. Queue size grows and shrinks wrt no. of children nodes.
     - Depth First
+        - All of them use recursion
+        - Time Complexity: O(n)
+            - Hand wavy proof: Each node is visited once.
+        - Space Complexity: O(h), where h is the height of the tree. 
+            - In using recursion, the call stack memory keeps growing and shrinking. The worst case is when call stack grows to its maximum. As we're traversing the depth the growth of the call stack depends on the height of the tree. 
+            - Worst case: `h_max = n-1 => O(n)`.
+            - Best case: `h_min = log(n) => O(log(n)`).
         - Pre-order (root->left->right)
         - In-order (left->root->right)
             - >NOTE: In-order traversal of binary search tree gives sorted list.
         - Post-order (left->right->root)
+- Checks:
+    - If a binary tree is a binary search tree.
+        - In-order traversal and check if you're getting elements in sorted order.
+        - Define range on the nodes: https://youtu.be/yEwSGhSsT0U
+
 
 
 
