@@ -29,3 +29,24 @@ Based on:
     - Stable sorting algorithm
 
 - Insertion Sort:
+    - Starts from the second element.
+    - Picks an element, compares it to the element(s) on it's left and "inserts" it in new appropriate position.
+    - Left hand part is sorted, right hand part is unsorted. 
+    - Sorted region grows and steps are repeated for next element in the unsorted region.
+    - Time Complexity: 
+        - Best Case: O(n) - already sorted.
+        - Average/Worst: O(n^2). 
+        - Although average/worst is same as bubble sort and selection sort, overall insertion sort does fewer comparison and swaps.
+    - Space Complexity:
+        - O(1) : The same array is divided into sorted and unsorted regions.
+
+- Merge Sort:
+    - Keep dividing an array into halves till we get array on single elements
+    - Call a merging algorithm to merge sorted lists into parent list. 
+    - Recursive calls for dividing.
+        - Base Condition: One element array.
+    - Time Complexity: O(n*log(n)) - best/worst/average.
+    - Space Complexity: O(n) -  worst.
+    - Other features: Divide and conquer, recursive, stable, _not_ in place (uses extra memory).
+
+- Quick Sort:
