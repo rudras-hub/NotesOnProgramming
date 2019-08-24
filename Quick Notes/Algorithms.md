@@ -60,4 +60,4 @@ Based on:
         - Best/Average: O(n*log(n))
         - Worst: O(n^2)
     - Space complexity: 
-        - Best/Worst/Aveage: O(log(n))     
+        - Best/Worst/Average: O(log(n))     
