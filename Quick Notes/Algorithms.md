@@ -50,3 +50,14 @@ Based on:
     - Other features: Divide and conquer, recursive, stable, _not_ in place (uses extra memory).
 
 - Quick Sort:
+    - Chose last element as the pivot
+    - Rearrange array so that all elements less than the pivot are to the left in the array, pivot in between and all elements greater than pivot to the right.
+    - Chose left segment of the array, pivot and rearrange.
+    - Chose the right segment, pivot and rearrange. 
+    - Recursive calls to break down array into smaller segments.
+    - All re-arrangements in the same array.
+    - Time complexity: 
+        - Best/Average: O(n*log(n))
+        - Worst: O(n^2)
+    - Space complexity: 
+        - Best/Worst/Aveage: O(log(n))     
