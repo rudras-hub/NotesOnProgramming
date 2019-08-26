@@ -62,3 +62,7 @@ Based on:
     - Space complexity: 
         - Best/Worst/Average: O(log(n))
     - Other features: Divide and conquer, recursive, _not stable_, in place.
+
+- Heap Sort
+
+- Binary Search
