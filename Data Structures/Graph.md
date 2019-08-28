@@ -76,13 +76,16 @@
                 - O(1)
             - Good time complexity!
     - Space Complexity: 
+        - O(|v|^2) for edges. 
         - Bad space complexity, especially for large sparse graphs. 
             - Lot of memory used to represent few connections.
         > NOTE: Adjacency matrix representation is good when the graph is dense.
 
 - Graph Implementation - Adjacency List
     - Vertices in a list. 
-    - Edges list is a list of (indices of) connected nodes for each vertex.
+    - Edges are stored in a collection of linked list.
+        - A linked list to hold all connected nodes and weights for a vertex. 
+        - A Collection of such linked lists to represent all edges of a graph.
         - The edges list is much smaller than a vxv, as unconnected nodes for a vertex is not represented. 
     - Time Complexity:
          - Vertex List: O(1) if we (know and )search by indices of vertex, otherwise O(|v|) to scan the list for vertex.
@@ -91,5 +94,7 @@
                 - O(|v|), worst case if a vertex is connected to all other vertex.
             - Find if two nodes are connected: Scan the list of connected nodes from the edges list for the relevant vertex nad check if desire node exists
                 - O(|v|), worst case if a vertex is connected to all other vertex.
-
-
+            - > NOTE: Easy insertion and deletion of new  edges because of linked lists.
+    - Space Complexity:
+        - O(|e|), here |e| << |v|^2 as graph is sparse. 
+        - Much better space complexity.
