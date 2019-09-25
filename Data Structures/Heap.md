@@ -55,7 +55,7 @@ public void BalanceMaxHeap(int[] arr, int i, int N){
 }
 ```
 - Time complexity: `O(log(N)`
-    - _Further explanation needed._
+    - It's doing a depth traversal, and height ~ log(N).
 
 ## Building a heap
 - The following code defines strategy for building a max heap from an unsorted array. 
