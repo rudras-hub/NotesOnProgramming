@@ -84,7 +84,7 @@
                 - O(1)
             - Good time complexity!
     - Space Complexity: 
-        - O(|v|^2) for edges matrix. _Bast, average and worst case_. 
+        - O(|v|^2) for edges matrix. _Best, average and worst case_. 
         - Bad space complexity, especially for large sparse graphs. 
             - Lot of memory used to represent few connections.
         > NOTE: Adjacency matrix representation is good when the graph is dense.
