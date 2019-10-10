@@ -4,6 +4,7 @@
 - Like trees, graphs are collection of nodes connected through edges. 
 - Differences:
     - A tree with N node will always have N-1 edges.
+        - Every node has only 1 edge connecting it to its parent. Except the root node.
     - In a tree, there is exactly one path from the root to a node.
 - Graph is an ordered pair of set of vertices and set of edges. `G = (V, E)`
 - Graphs can represent objects with pair-wise relationship.
@@ -28,8 +29,15 @@
 
 - Graph: Number of Edges: 
     - Directed: `0 <= E <= n(n-1)`
-    - Undirected: `0 <= E <= m(n-1)/2`
-    - n is _maximum number of edges_.
+        - Every node can be connected to every other node, except self.
+        - max `n-1` edges for a node. So max `n*(n-1)` total edges. 
+    - Undirected: `0 <= E <= n(n-1)/2`
+        - Max no. of edges originating from 1st node = `n-1`.
+        - Max no. of edges from second node = `n-2`. 
+            - To every other node, except self. And except first node, which is already connected.
+        - For third `n-3`, for fourth `n-4` and so on.
+        - Max total edges = `(n-1) + (n-2) + (n-3)+ ... 3+2+1` = `n(n-1)/2`
+    - n is _maximum number of nodes_.
 
 - Graph: Dense vs Sparse Graphs: 
     - Dense: Graph with edges close to the max limit
@@ -37,7 +45,7 @@
     - Storage:
         - Dense: Adjacency Matrix.
         - Sparse: Adjacency List.
-    - Important attribute to make other decisions, as well.
+    - This is an important attribute of graphs that helps make other decisions, as well.
 
 - Path: 
     - A sequence of vertices where all adjacent vertices are connected by nodes. In case of a directed graph, edges connecting vertices must also be aligned in direction.
@@ -56,17 +64,17 @@
         - List of edges basically contains start vertex, end vertex and weight for each edge.
     - Time Complexity:
         - Vertex List = O(|v|); function of number of vertices.
-        - Edge List: O(|e|) = O(|v|^2); function of square of number of vertices! 
+        - Edge List: O(|e|) = O(|v|^2); As max edges is a function of square of number of vertices.
         - Costly to find adjacent nodes and if two nodes are connected.
     - Space Complexity:
         - again O(|v|) and O(|v|^2) for vertex and edge respectively, but not as costly as adjacency matrix representation.
+        - O(|v|^2) is the worst case space complexity of the edges list.
 
 - Graph Implementation - Adjacency matrix
-    - Vertices in a list, Edges in 2D array of size vxv. 
+    - Vertices in a list, Edges in 2D array of size `v x v`. 
         - Store 1 or the weight if node i is connected to node j on cell Eij.
-        - Adjacency matrix representation.
-    - For an undirected graph, the matrix of edges E is symmetric => Eij = Eji.
-        - Sufficient to analyze one of the diagonal half. 
+    - For an _undirected graph_, the matrix of edges E is symmetric => `Eij = Eji`.
+        - Sufficient to analyze one of the diagonal halves of the matrix. 
     - Time Complexity: 
         - Vertex List = O(1) if we (know and )search by indices of vertex, otherwise O(|v|) to scan the list for vertex.
         - Edge List
@@ -76,7 +84,7 @@
                 - O(1)
             - Good time complexity!
     - Space Complexity: 
-        - O(|v|^2) for edges. 
+        - O(|v|^2) for edges matrix. _Bast, average and worst case_. 
         - Bad space complexity, especially for large sparse graphs. 
             - Lot of memory used to represent few connections.
         > NOTE: Adjacency matrix representation is good when the graph is dense.
@@ -92,7 +100,7 @@
          - Edge List: 
             - Finding Adjacent Nodes: Scan and pick up connected nodes from the edges list for the relevant vertex. 
                 - O(|v|), worst case if a vertex is connected to all other vertex.
-            - Find if two nodes are connected: Scan the list of connected nodes from the edges list for the relevant vertex nad check if desire node exists
+            - Find if two nodes are connected: Scan the list of connected nodes from the edges list for the relevant vertex and check if desire node exists
                 - O(|v|), worst case if a vertex is connected to all other vertex.
             - > NOTE: Easy insertion and deletion of new  edges because of linked lists.
     - Space Complexity:
