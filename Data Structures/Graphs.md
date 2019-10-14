@@ -49,14 +49,9 @@
 
 - Path: 
     - A sequence of vertices where all adjacent vertices are connected by nodes. In case of a directed graph, edges connecting vertices must also be aligned in direction.
-    - Simple Path: A path with no repeated vertices and edges.
-    - Trail: A path in which vertices can be repeated but edges must not be repeated.
-    - Closed Walk: A path which starts and ends at the same vertex, and the length of the path is greater than 0.
-    - Cycle: A closed walk with no vertex and edges repeated, other than the start vertex.
-> NOTE: If any other path is possible between two vertices then a simple path is also exists between them.
 
 - Graph: Connected vs Un-connected
-    - Is connected if there exists a path from any vertex to any other vertex.
+    - Is strongly connected if there exists a path from any vertex to any other vertex.
 
 ## Graph Implementation
 - Graph Implementation - Lists:
@@ -106,3 +101,42 @@
     - Space Complexity:
         - O(|e|), here |e| << |v|^2 as graph is sparse. 
         - Much better space complexity.
+
+## Graph Traversals
+### DFS
+- Used to explore the whole graph and not just a particular reachable destination.
+- Each vertex and each edge is visited.
+    - Directed Graph : Each edge gets visited once.
+    - Undirected Graph: Each edge gets visited twice, once from each side.
+- Applications:
+    - Edge classification
+    - Cycle detection
+    - Topological sort
+
+- Edge Classification:
+    - Tree Edge: Edge leads to an unvisited vertex. Tree edges of a graph form a trees.
+    - Forward Edge: Go from _node-> descendent_ in the tree.
+    - Backward Edge: Go from _node->ancestor_ in the tree.
+    - Cross edges: Connecting different sub-trees.
+    - _Undirected graphs_  only have _tree and forward_ edges.
+    - Used for: Cycle detection and topological sort.
+
+- Cycle detection
+    - A graph (directed or undirected) has cycles _iff_ there exists a back edge
+    - Back edge => edge to a node already in class stack while traversing recursively.
+        - As descendants are finished processing first, before bubbling back up to ancestors in the stack.
+
+- Topological Sort
+    - Typically used in job scheduling problems.
+    - On directed graphs.
+    - Vertices of the graph are arranged such that for every edge u->v, vertex u comes before vertex v in the ordering.
+    - Topological ordering is possible _iff_ the directed graph has no cycles. 
+    - Again, the descendents are finished processing first. 
+    - When a node (all it's descendent) have been, it's bee marked visited and added to a stack.
+    - Next it's parent will be done and will be added to the stack. 
+    - Once we fully return from the recursive call, the stack can be popped to give the topological order. 
+
+
+### BFS
+- Application
+    - To find is the shortest source->destination path or if any such path exists.
